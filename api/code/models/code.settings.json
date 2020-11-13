@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "codes",
+  "info": {
+    "name": "Code",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Link": {
+      "type": "text",
+      "regex": "https?:\\/\\/*"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Repo": {
+      "type": "text",
+      "regex": "https?:\\/\\/*"
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
